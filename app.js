@@ -8,6 +8,21 @@ const http = require("http");
 const port = process.env.PORT || 5000;
 let server = http.createServer(app);
 let io = socketIO(server);
+// Enable reverse proxy support in Express. This causes the
+// the "X-Forwarded-Proto" header field to be trusted so its
+// value can be used to determine the protocol. See
+// http://expressjs.com/api#app-settings for more details.
+app.enable("trust proxy");
+// Add a handler to inspect the req.secure flag (see
+// http://expressjs.com/api#req.secure). This allows us
+// to know whether the request was via http or https.
+app.use((req, res, next) => {
+  req.secure
+    ? // request was via https, so do no special handling
+      next()
+    : // request was via http, so redirect to https
+      res.redirect("https://" + req.headers.host + req.url);
+});
 app.use(express.static("public"));
 
 //create an array to store name of clients joined
