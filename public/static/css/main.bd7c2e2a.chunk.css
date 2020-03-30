@@ -1,0 +1,1 @@
+.chat-container{display:flex;flex-direction:column;height:52em}.chatInput{padding-bottom:20px;margin-top:10px}.chatList{margin-top:5em;align-items:center;flex-grow:1}.chatBubble{font-family:Arial,Helvetica,sans-serif;position:relative;padding:12px;width:70%;left:-1%;margin-bottom:-1em;border-radius:10px;color:#fff;margin-top:10px;font-size:12px;font-style:italic}
