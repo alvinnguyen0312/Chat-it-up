@@ -14,3 +14,4 @@ A mobile PWA (Progressive Web App) chat application
 - App is deployed to Hekoru
 ## Demo
 [Here](https://kietnguyen-chatapp.herokuapp.com/)
+![Demo Pic](https://github.com/alvinnguyen0312/Chat-it-up/blob/master/Screen%20Shot%202020-03-30%20at%208.17.37%20PM.png)
